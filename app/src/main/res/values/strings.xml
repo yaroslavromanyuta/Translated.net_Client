@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Dictionary</string>
+    <string name="btn_translate">Translate</string>
+    <string name="translation">Translation</string>
+    <string name="alert_not_found">Translation not found!</string>
+    <string name="alert_no_text">Enter text for translation</string>
+    <string name="alert_no_internet">Check your connection to internet!</string>
+    <string name="share">Share</string>
+    <string name="share_via">Share via</string>
+</resources>
