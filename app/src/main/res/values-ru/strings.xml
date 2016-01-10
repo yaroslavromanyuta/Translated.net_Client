@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Переводчик</string>
+    <string name="alert_no_internet">Отсутствует подключение к интернету</string>
+    <string name="alert_no_text">Введите текст</string>
+    <string name="alert_not_found">Перевод не найден</string>
+    <string name="btn_translate">Перевести</string>
+    <string name="share">Отправить</string>
+    <string name="share_via">Отправить с помошью</string>
+    <string name="translation">Перевод</string>
+</resources>
