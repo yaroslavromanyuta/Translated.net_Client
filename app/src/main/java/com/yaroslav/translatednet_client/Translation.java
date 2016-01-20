@@ -44,12 +44,14 @@ public class Translation {
         return translFrom;
     }
 
-    public void setLangFrom(String langFrom) {
+    public Translation setLangFrom(String langFrom) {
         this.langFrom = langFrom;
+        return this;
     }
 
-    public void setLangTo(String langTo) {
+    public Translation setLangTo(String langTo) {
         this.langTo = langTo;
+        return this;
     }
 
     public void setTranslatedText(String translatedText) {
