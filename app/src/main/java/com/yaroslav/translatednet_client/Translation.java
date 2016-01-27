@@ -8,6 +8,7 @@ import static com.yaroslav.translatednet_client.Constants.LOG_TAG;
 public class Translation {
 
 
+
     private String translFrom;
     private  String translatedText;
     private String langFrom;

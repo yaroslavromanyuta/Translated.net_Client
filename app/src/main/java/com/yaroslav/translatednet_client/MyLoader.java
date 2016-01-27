@@ -47,7 +47,7 @@ public class MyLoader extends AsyncTaskLoader<Translation> {
 
         Api api = retrofit.create(Api.class);
 
-        translation.putLanguages();
+        //translation.putLanguages();
         String query = translation.getTranslFrom();
         String langpair = translation.getLangFrom()+"|"+translation.getLangTo();
         Call<ServerResponse> call = api.getTranslation(query, langpair);
@@ -60,12 +60,9 @@ public class MyLoader extends AsyncTaskLoader<Translation> {
         Log.d(Constants.LOG_TAG, "response created. HTTP status code=" + response.code() + "; isSuccess=" + response.isSuccess() + "; message=" + response.message() + " Response.body()=" + response.body().getResponse());
 
         Map<String,String> responseData = response.body().getResponse();
-        if (translation.getLangTo()== "ru"){
-            translation.setTranslatedText(convertFromUnicode(responseData.get("translatedText")));
-        }
-        else{
-            translation.setTranslatedText(responseData.get("translatedText"));
-        }
+
+        translation.setTranslatedText(convertFromUnicode(responseData.get("translatedText")));
+
 
         Log.d(LOG_TAG, "transl: " + "orig - " + translation.getTranslFrom() + ", to - "
                 + translation.getTranslatedText() + ", langpair - " + translation.getLangFrom() +"|"+ translation.getLangTo());

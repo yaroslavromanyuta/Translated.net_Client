@@ -27,6 +27,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import static com.yaroslav.translatednet_client.Constants.AUTHORITY;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     ProgressBar progressBar;
     String currentText;
     Toolbar myToolbar;
+    Spinner spinLangFrom;
+    Spinner spinLangTo;
 
     public static final Uri TRANSL_CONTENT_URI = Uri.parse("content://"
             + AUTHORITY + "/" + TRANSL_PATH );
@@ -75,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         listView =(ListView) findViewById(R.id.listView);
         listView.setAdapter(cursorAdapter);
+
+        spinLangFrom = (Spinner) findViewById(R.id.spin_lng_from);
+        spinLangTo = (Spinner) findViewById(R.id.spin_lng_to);
 
         button = (Button)findViewById(R.id.button);
         editText = (EditText) findViewById(R.id.editText);
@@ -205,6 +211,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         editText.setEnabled(false);
         Translation translation = new Translation();
         translation.setTranslFrom(txt);
+        translation.setLangFrom(spinLangFrom.getSelectedItem().toString());
+        translation.setLangTo(spinLangTo.getSelectedItem().toString());
         MyLoader loader = new MyLoader(this,translation);
         Log.d(LOG_TAG, "Loader oncreated.");
 
@@ -244,7 +252,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Log.d(LOG_TAG,"titel " + getSupportActionBar().getTitle());
 
         progressBar.setVisibility(View.INVISIBLE);
+
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(R.string.app_name);
 
     }
 

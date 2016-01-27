@@ -15,11 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        android:title="@string/app_name"
         android:elevation="4dp">
 
-
-
-    <ProgressBar
+        <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,13 +40,39 @@
         android:layout_toLeftOf="@+id/button"
         android:layout_toStartOf="@+id/button"/>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:id="@+id/linearLayout">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_lng_from"
+            android:layout_weight="1"
+            android:entries="@array/languages"
+            android:background="#373d31"
+            android:layout_marginRight="2dp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_lng_to"
+            android:layout_weight="1"
+            android:entries="@array/languages"
+            android:background="#373d31"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/button"/>
+        android:layout_below="@+id/linearLayout"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -58,5 +83,6 @@
         android:layout_alignTop="@+id/editText"
         android:layout_alignRight="@+id/my_toolbar"
         android:layout_alignEnd="@+id/my_toolbar"/>
+
 
 </RelativeLayout>
