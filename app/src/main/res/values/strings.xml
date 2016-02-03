@@ -5,6 +5,7 @@
     <string name="alert_not_found">Translation not found!</string>
     <string name="alert_no_text">Enter text for translation</string>
     <string name="alert_no_internet">Check your connection to internet!</string>
+    <string name="alert_same_langs">Choose different languages</string>
     <string name="share">Share</string>
     <string name="share_via">Share via</string>
     <string-array name="languages">

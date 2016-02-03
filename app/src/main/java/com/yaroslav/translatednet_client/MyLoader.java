@@ -56,6 +56,7 @@ public class MyLoader extends AsyncTaskLoader<Translation> {
             response = call.execute();
         } catch (IOException e) {
             e.printStackTrace();
+            Log.d(LOG_TAG,""+e.toString());
         }
         Log.d(Constants.LOG_TAG, "response created. HTTP status code=" + response.code() + "; isSuccess=" + response.isSuccess() + "; message=" + response.message() + " Response.body()=" + response.body().getResponse());
 

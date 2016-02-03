@@ -8,4 +8,5 @@
     <string name="share">Share</string>
     <string name="share_via">Share via</string>
     <string name="translation">Translation</string>
+    <string name="alert_same_langs">Choose different languages</string>
 </resources>

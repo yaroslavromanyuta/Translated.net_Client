@@ -189,14 +189,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     public void onClick (View view){
         if (isNetworkOnline()){
-            if (!(editText.getText().toString().isEmpty())) {
-            getLoaderManager().restartLoader(0, null, this);
-            getLoaderManager().getLoader(0).forceLoad();
-            view.setEnabled(false);
-            progressBar.setVisibility(View.VISIBLE);
-            }
-            else
-            Toast.makeText(this,R.string.alert_no_text,Toast.LENGTH_SHORT).show();
+            if (spinLangFrom.getSelectedItem() != spinLangTo.getSelectedItem()) {
+                if (!(editText.getText().toString().isEmpty())) {
+                    getLoaderManager().restartLoader(0, null, this);
+                    getLoaderManager().getLoader(0).forceLoad();
+                    view.setEnabled(false);
+                    progressBar.setVisibility(View.VISIBLE);
+                } else
+                    Toast.makeText(this, R.string.alert_no_text, Toast.LENGTH_SHORT).show();
+            }else Toast.makeText(this, R.string.alert_same_langs, Toast.LENGTH_SHORT).show();
         }
         else Toast.makeText(this,R.string.alert_no_internet,Toast.LENGTH_SHORT).show();
 

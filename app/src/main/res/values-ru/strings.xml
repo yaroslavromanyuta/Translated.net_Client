@@ -8,4 +8,5 @@
     <string name="share">Отправить</string>
     <string name="share_via">Отправить с помошью</string>
     <string name="translation">Перевод</string>
+    <string name="alert_same_langs">Выберите два разных языка</string>
 </resources>
